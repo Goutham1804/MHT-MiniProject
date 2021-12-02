@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>
+          Mental Health Tracker
+      </title>
+      <script>
+        function validate()
+        {
+
+          var regex1=/^[1-9]?\d$/;
+          var regex2=/^[0-9]*\d$/;
+          var regex3=/^([1-9]|10)$/;
+          var regex4=/^(0|1)$/;
+
+          if(myform.a.value==""||myform.a.value==null)
+          {
+              alert("Age should not be empty..!");
+              return false;
+          }
+          if(regex1.test(myform.a.value)==false)
+          {
+              alert("Age should be between 0 and 100..!");
+              return false;
+          }
+
+
+          if(myform.b.value==""||myform.b.value==null)
+          {
+              alert("2nd field should not be empty..!");
+              return false;
+          }
+          if(regex2.test(myform.b.value)==false)
+          {
+              alert("Value in 2nd field must be a positive number..!");
+              return false;
+          }
+
+
+          if(myform.c.value==""||myform.c.value==null)
+          {
+              alert("   Productivity field should not be empty..!");
+              return false;
+          }
+          if(regex3.test(myform.c.value)==false)
+          {
+              alert("Productivity rating should be in range of 1-10..!");
+              return false;
+          }
+          
+           
+          if(myform.d.value==""||myform.d.value==null)
+          {
+              alert("Sleep field should not be empty..!");
+              return false;
+          }
+          if(regex4.test(myform.d.value)==false)
+          {
+              alert("Sleep field should be either o or 1!");
+              return false;
+          }
+
+          if(myform.e.value==""||myform.e.value==null)
+          {
+              alert("Mental disorder field should not be empty..!");
+              return false;
+          }
+          if(regex4.test(myform.e.value)==false)
+          {
+              alert("Mental disorder field should be either o or 1!");
+              return false;
+          }
+
+          if(myform.f.value==""||myform.f.value==null)
+          {
+              alert("Last field should not be empty..!");
+              return false;
+          }
+          if(regex4.test(myform.e.value)==false)
+          {
+              alert("Last field should be either o or 1!");
+              return false;
+          }
+
+          return true;
+        }
+      </script>
+      <style>
+        body{
+          background-image: url("/static/mental_hlth.PNG");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        input[type=submit] {
+         width: 15em;  height: 3em;
+        }
+        input[type=text] {
+         width: 12em;  height: 2em;
+        }
+      </style>
+        </head>
+    <body>
+       <center>
+           <h1>MENTAL HEALTH TRACKER</h1>
+           <form name="myform" method="POST", action="{{url_for('home')}}" onsubmit="return validate()">
+
+             <b></b>
+
+             <p><h2>Enter your age : </h2></p>  
+             <input type="text", name='a', placeholder="enter age   "> <br>
+
+             <p><h2>How many people you met in last 24 hours : </h2></p>  
+             <input type="text", name='b', placeholder="enter number "> <br>
+
+             <p><h2>How productive you are today
+             (Rate it in between 1 and 10) :</h2></p> 
+             <input type="text", name='c', placeholder="enter value "> <br>
+
+             <p><h2>Having sufficient sleep ?    
+             (Enter 1-if YES ,0- Otherwise ):</h2> </p>
+             <input type="text", name='d', placeholder="enter 1 or 0"> <br>
+
+             <p><h2>Have you ever been diagnosed with mental disorder ? 
+             (Enter 1-if YES ,0- Otherwise ):</h2> </p>
+             <input type="text", name='e', placeholder="enter 1 or 0"> <br>
+
+             <p><h2>How did you felt yesterday    
+             (Enter 1-if happy ,0- if sad ):</h2> </p>
+             <input type="text", name='f', placeholder="enter 1 or 0"> <br>
+            
+             </b>
+
+             <br><br>
+
+             <input type="submit" , value='PREDICT' >
+         </form>
+       </center>
+    </body>
+</html>

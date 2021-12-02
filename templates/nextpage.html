@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-image: url('/static/mht1.PNG');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+</head>
+<body>
+
+    <center>
+
+        <h1>  PREDICTION :  </h1>
+    
+    {%if data == 0%}
+    <h3>YOU ARE SAD</h3>  
+         {%if ran == 0%}
+           <h3>Try this out...This can make you feel crazy...</h3>
+           <a href="https://zodigames.com/">--- click here! ---</a>
+         {%else%}
+           {%if ran == 1%}
+           <h3>He can do something to make you happy...</h3>
+           <a href="https://youtu.be/x1YGCzmxEoo">--- Wanna know who he is? ---</a>
+           {%else%}
+               {%if ran == 2%}
+               <h3>There is a saying that MUSIC can change anything...</h3>
+               <a href="https://youtu.be/hlWiI4xVXKY" >--- Can this change your mood? ---</a>
+               {%else%}
+               <h3>You can just laugh out loud listening this...</h3>
+               <a href= "https://youtu.be/hlWiI4xVXKY" >--- Listen Now!---</a>
+               {%endif%}
+           {%endif%}
+         {%endif%}
+    {%else%}
+    <h3>WE PREDICT THAT YOU ARE HAPPY</h3>  
+    {%endif%}
+        <br><br>
+    
+    <a href='/'>go back to home page</a>
+
+    </center>
+
+</body>
+
+</html>
